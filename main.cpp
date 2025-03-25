@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstring>
+#include <string>
 using namespace std;
 
 struct Student {
@@ -40,7 +40,12 @@ void addStudent() {
     cin.ignore(1000, '\n');
 
     cout << "Enter Student ID: ";
-    cin >> add.id;
+    while (!(cin >> add.id)) {
+        cout << "Invalid input. Please enter a number: ";
+        cin.clear();
+        cin.ignore(1000, '\n');
+    }
+
     if (isDuplicate(add.id)) {
         cout << "\nID already exists. Please enter a new ID.\n";
         cin.clear();
@@ -51,32 +56,32 @@ void addStudent() {
     cin.ignore(1000, '\n');
 
     cout << "Enter First Name: ";
-    cin >> add.first_name;
+    getline(cin, add.first_name);
 
     cout << "Enter Last Name: ";
-    cin >> add.last_name;
+    getline(cin, add.last_name);
 
     cout << "Enter Course: ";
-    cin >> add.course;
+    getline(cin, add.course);
 
     while (true) {
         cout << "Enter GPA (0.0-4.0): ";
-        cin >> add.gpa;
+        if (cin >> add.gpa) {
             if (isValid(add.gpa)) {
                 break;
             }
-        else {
+            cout << "Invalid GPA! Must be between 0.0 and 4.0\n";
+        } else {
             cout << "Invalid input. Please enter a number.\n";
             cin.clear();
             cin.ignore(1000, '\n');
-        
+        }
     }
 
     students[studentCount++] = add;
     cout << "\nStudent added successfully!\n";
     cin.clear();
     cin.ignore(1000, '\n');
-}
 }
 
 void editStudent() {
