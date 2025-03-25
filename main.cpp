@@ -65,18 +65,18 @@ void addStudent() {
             if (isValid(add.gpa)) {
                 break;
             }
-            cout << "Invalid GPA! Must be between 0.0 and 4.0\n";
-        } else {
+        else {
             cout << "Invalid input. Please enter a number.\n";
             cin.clear();
             cin.ignore(1000, '\n');
-        }
+        
     }
 
     students[studentCount++] = add;
     cout << "\nStudent added successfully!\n";
     cin.clear();
     cin.ignore(1000, '\n');
+}
 }
 
 void editStudent() {
