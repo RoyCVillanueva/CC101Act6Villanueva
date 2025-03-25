@@ -40,7 +40,7 @@ void addStudent() {
     cin.ignore(1000, '\n');
 
     cout << "Enter Student ID: ";
-    cin >> add.id
+    cin >> add.id;
     if (isDuplicate(add.id)) {
         cout << "\nID already exists. Please enter a new ID.\n";
         cin.clear();
@@ -61,7 +61,7 @@ void addStudent() {
 
     while (true) {
         cout << "Enter GPA (0.0-4.0): ";
-        cin >> add.gpa) 
+        cin >> add.gpa;
             if (isValid(add.gpa)) {
                 break;
             }
