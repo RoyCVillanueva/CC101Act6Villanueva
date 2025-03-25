@@ -246,8 +246,8 @@ void viewStudents() {
             return;
     }
 
-    cout << "\nSTUDENT RECORDS (" << studentCount << " total)\n";
-    cout << "========================================\n";
+    cout << "\nSTUDENT RECORDS\n";
+   
     for (int i = 0; i < studentCount; i++) {
         cout << "ID: " << tempStudents[i].id << "\n";
         cout << "Name: " << tempStudents[i].first_name << " " << tempStudents[i].last_name << "\n";
